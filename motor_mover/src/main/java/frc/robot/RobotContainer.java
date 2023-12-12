@@ -50,6 +50,10 @@ public class RobotContainer {
     // cancelling on release.
     m_driverController.b().onTrue(m_exampleSubsystem.moveForwardCommand());
     m_driverController.x().onTrue(m_exampleSubsystem.moveBackwardCommand());
+    m_driverController.a().onTrue(m_exampleSubsystem.stopFalcon());
+    m_driverController.y().whileTrue(m_exampleSubsystem.moveForwardCommand());
+    m_driverController.y().onFalse(m_exampleSubsystem.stopFalcon());
+  
   }
 
   /**

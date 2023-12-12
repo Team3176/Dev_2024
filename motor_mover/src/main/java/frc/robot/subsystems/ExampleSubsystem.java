@@ -11,7 +11,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 public class ExampleSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
 
-  WPI_TalonFX falcon = new WPI_TalonFX(1);
+  WPI_TalonFX falcon = new WPI_TalonFX(4);
   
   public ExampleSubsystem() {}
 
@@ -38,6 +38,15 @@ public class ExampleSubsystem extends SubsystemBase {
     return runOnce(
         () -> {
           falcon.set(-100.0);
+          /* one-time action goes here */
+        });
+  }
+  public Command stopFalcon() {
+      // Inline construction of command goes here.
+    // Subsystem::RunOnce implicitly requires `this` subsystem.
+    return runOnce(
+        () -> {
+          falcon.set(0);
           /* one-time action goes here */
         });
   }
