@@ -23,7 +23,12 @@ public class ExampleSubsystem extends SubsystemBase {
    public void moveForward(){
     falcon.set(100.0);
    }
-  public Command moveForwardCommand() {
+   
+   public void stopMotor(){
+    falcon.set(0.0);
+   }
+  
+   public Command moveForwardCommand() {
     // Inline construction of command goes here.
     // Subsystem::RunOnce implicitly requires `this` subsystem.
     return runOnce(
