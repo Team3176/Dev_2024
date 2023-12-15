@@ -47,10 +47,10 @@ public class linebreakCommand extends Command {
   @Override
   public boolean isFinished() {
     if(input.get() == true){
-      return false;
+      return true;
     }
     else{
-      return true;
+      return false;
     }
   }
 }
