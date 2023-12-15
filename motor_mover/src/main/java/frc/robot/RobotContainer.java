@@ -52,6 +52,7 @@ public class RobotContainer {
     m_driverController.b().onTrue(m_exampleSubsystem.mvFowardCommand());
     m_driverController.x().onTrue(m_exampleSubsystem.moveBackwardCommand());
     m_driverController.a().onTrue(m_exampleSubsystem.stopCommand());
+    m_driverController.y().whileTrue(m_exampleSubsystem.mvFowardCommand());
   }
 
   /**
