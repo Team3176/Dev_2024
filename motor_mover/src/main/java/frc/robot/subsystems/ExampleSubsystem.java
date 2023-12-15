@@ -8,12 +8,13 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
+
 public class ExampleSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
 
   WPI_TalonFX falcon = new WPI_TalonFX(4);
-  
   public ExampleSubsystem() {}
+
 
   /**
    * Example command factory method.
@@ -50,6 +51,7 @@ public class ExampleSubsystem extends SubsystemBase {
           /* one-time action goes here */
         });
   }
+   
 
   /**
    * An example method querying a boolean state of the subsystem (for example, a digital sensor).
