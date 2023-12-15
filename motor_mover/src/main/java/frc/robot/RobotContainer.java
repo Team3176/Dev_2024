@@ -55,8 +55,6 @@ public class RobotContainer {
     m_driverController.a().onTrue(m_exampleSubsystem.stopFalcon());
     m_driverController.y().whileTrue(m_exampleSubsystem.moveForwardCommand());
     m_driverController.y().onFalse(m_exampleSubsystem.stopFalcon());
-    m_driverController.b().onTrue(m_exampleSubsystem.moveForwardCommand());
-    //m_driverController.b().onFalse(m_exampleSubsystem.isFinished());
     m_driverController.back().onTrue(new ExampleCommand2(m_exampleSubsystem));
   }
 
