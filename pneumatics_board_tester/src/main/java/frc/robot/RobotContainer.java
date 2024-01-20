@@ -6,13 +6,29 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
+import frc.robot.pneumatics;
+import frc.robot.Controller;
+import frc.robot.extendPiston;
+
+
 
 public class RobotContainer {
+  private final pneumatics m_Pneumatics;
+  private final Controller m_Controller;
+  public Controller operator;
+
   public RobotContainer() {
     configureBindings();
+    m_Controller = Controller.getInstance();
+    m_Pneumatics = pneumatics.getInstance();
   }
 
-  private void configureBindings() {}
+  private void configureBindings() {
+    
+    m_Controller.operator.b().onTrue(new extendPiston());
+    
+    m_Controller.operator.b().onFalse(new extendPiston());
+  }
 
   public Command getAutonomousCommand() {
     return Commands.print("No autonomous command configured");
