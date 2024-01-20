@@ -10,10 +10,10 @@ import edu.wpi.first.wpilibj2.command.Command;
 
 
 
-public class extendPiston extends Command{
+public class retractPiston extends Command{
   /** Creates a new ClawInhale. */
   pneumatics m_pneumatics = pneumatics.getInstance();
-  public  extendPiston() {
+  public  retractPiston() {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(m_pneumatics);
   }
@@ -27,7 +27,7 @@ public class extendPiston extends Command{
   @Override
   public void execute() 
   {
-    m_pneumatics.Extend();
+    m_pneumatics.Retract();
   }
 
 }

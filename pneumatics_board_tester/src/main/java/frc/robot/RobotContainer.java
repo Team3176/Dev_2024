@@ -13,21 +13,21 @@ import frc.robot.extendPiston;
 
 
 public class RobotContainer {
-  private final pneumatics m_Pneumatics;
+  private final pneumatics m_pneumatics;
   private final Controller m_Controller;
   public Controller operator;
 
   public RobotContainer() {
     configureBindings();
     m_Controller = Controller.getInstance();
-    m_Pneumatics = pneumatics.getInstance();
+    m_pneumatics = pneumatics.getInstance();
   }
 
   private void configureBindings() {
     
     m_Controller.operator.b().onTrue(new extendPiston());
     
-    m_Controller.operator.b().onFalse(new extendPiston());
+    m_Controller.operator.b().onFalse(new retractPiston());
   }
 
   public Command getAutonomousCommand() {
