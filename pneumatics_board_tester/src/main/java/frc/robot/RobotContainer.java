@@ -14,13 +14,14 @@ import frc.robot.extendPiston;
 
 public class RobotContainer {
   private final pneumatics m_pneumatics;
-  private final Controller m_Controller;
-  public Controller operator;
+  private Controller m_Controller;
+  //public Controller operator;
 
   public RobotContainer() {
-    configureBindings();
-    m_Controller = Controller.getInstance();
+
+    m_Controller = new Controller();
     m_pneumatics = pneumatics.getInstance();
+    configureBindings();
   }
 
   private void configureBindings() {
