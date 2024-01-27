@@ -27,7 +27,7 @@ public class Robot extends TimedRobot {
   private final PositionTorqueCurrentFOC m_torquePosition = new PositionTorqueCurrentFOC(0, 0, 0, 1, false, false, false);
   private final NeutralOut m_brake = new NeutralOut();
   private final XboxController m_joystick = new XboxController(0);
-  private final DigitalInput limitswitch1 = new DigitalInput(9);
+  private final DigitalInput limitbreak1 = new DigitalInput(9);
 
  
    @Override
@@ -82,8 +82,8 @@ public class Robot extends TimedRobot {
     double desiredRotations = m_joystick.getLeftX() * 10; 
     double speed = 0;
     
-    if(limitswitch1.get()) {
-      System.out.println("Limitswitch value:"+limitswitch1.get());
+    if(limitbreak1.get()) {
+      System.out.println("Limitbreak1 value:"+limitbreak1.get());
       if (m_joystick.getAButtonPressed()) {
          m_fx.setControl(m_voltagePosition.withPosition(desiredRotations));
       } else {
